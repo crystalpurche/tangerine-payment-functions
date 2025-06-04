@@ -1,0 +1,10 @@
+[build]
+  functions = "netlify/functions"
+[functions]
+  # Longer timeout for Mollie API calls
+  timeout = 30
+[[redirects]]
+  # Handle CORS for API calls
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
